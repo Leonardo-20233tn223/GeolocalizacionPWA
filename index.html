@@ -19,26 +19,11 @@
 <body>
   <header class="app-header">
     <h1>Geolocalización PWA</h1>
-    <p class="subtitle">Adjunta tus coordenadas con consentimiento y un plan B siempre disponible.</p>
+    <p class="autor">Leonardo Martínez Vázquez</p>
   </header>
 
   <main>
-    <section class="card" aria-labelledby="titulo-instalar">
-      <h2 id="titulo-instalar">Instala la app</h2>
-      <p id="texto-instalacion">Puedes añadir esta aplicación a la pantalla de inicio para usarla como una app nativa.</p>
-      <button id="btn-instalar" class="btn primario oculto" type="button">Instalar aplicación</button>
-      <div id="instrucciones-ios" class="nota oculto">
-        <p><strong>En iPhone o iPad:</strong></p>
-        <ol>
-          <li>Abre esta página en Safari.</li>
-          <li>Toca el botón <strong>Compartir</strong>.</li>
-          <li>Elige <strong>Agregar a inicio</strong>.</li>
-        </ol>
-      </div>
-      <p id="estado-instalacion" class="estado" role="status" aria-live="polite"></p>
-    </section>
-
-    <section class="card" aria-labelledby="titulo-ubicacion">
+    <section class="card card-ubicacion" aria-labelledby="titulo-ubicacion">
       <h2 id="titulo-ubicacion">Ubicación</h2>
       <p>Usamos tu ubicación solo para adjuntar las coordenadas a este registro. Nada se envía a un servidor.</p>
 
@@ -95,6 +80,21 @@
       </div>
 
       <p id="estado-zona" class="estado" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card card-instalar" aria-labelledby="titulo-instalar">
+      <h2 id="titulo-instalar">Instala la app</h2>
+      <p id="texto-instalacion">Puedes añadir esta aplicación a la pantalla de inicio para usarla como una app nativa.</p>
+      <button id="btn-instalar" class="btn primario oculto" type="button">Instalar aplicación</button>
+      <div id="instrucciones-ios" class="nota oculto">
+        <p><strong>En iPhone o iPad:</strong></p>
+        <ol>
+          <li>Abre esta página en Safari.</li>
+          <li>Toca el botón <strong>Compartir</strong>.</li>
+          <li>Elige <strong>Agregar a inicio</strong>.</li>
+        </ol>
+      </div>
+      <p id="estado-instalacion" class="estado" role="status" aria-live="polite"></p>
     </section>
   </main>
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = "geo-static-v1";
+const CACHE_NAME = "geo-static-v2";
 const CACHE_PREFIX = "geo-static-";
 const APP_SHELL = new URL("./index.html", self.location).href;
 const PRECACHE = [

@@ -30,7 +30,6 @@ body {
 }
 
 .app-header {
-  max-width: 640px;
   margin: 0 auto 20px;
   text-align: center;
 }
@@ -42,16 +41,18 @@ h1 {
   color: var(--texto);
 }
 
-.subtitle {
+.autor {
   margin: 0;
-  color: var(--texto-suave);
+  color: var(--acento-claro);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 main {
-  max-width: 640px;
-  margin: 0 auto;
   display: grid;
   gap: 16px;
+  margin: 0 auto;
 }
 
 .card {
@@ -120,11 +121,6 @@ p {
   transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn:hover {
-  border-color: var(--acento-claro);
-  background: #2a1a30;
-}
-
 .btn:focus-visible {
   outline: 3px solid rgba(255, 90, 168, 0.55);
   outline-offset: 2px;
@@ -143,12 +139,6 @@ p {
   border-color: transparent;
   background: linear-gradient(180deg, var(--acento), #b80063);
   color: #ffffff;
-}
-
-.primario:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: linear-gradient(180deg, var(--acento), #a8005a);
-  box-shadow: 0 0 0 3px rgba(255, 90, 168, 0.18);
 }
 
 .peligro {
@@ -259,13 +249,105 @@ select:focus-visible {
 }
 
 footer {
-  max-width: 640px;
   margin: 20px auto 0;
   text-align: center;
   font-size: 0.8rem;
   color: var(--texto-suave);
 }
 
+footer p {
+  margin: 0;
+}
+
 .oculto {
   display: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    border-color: var(--acento-claro);
+    background: #2a1a30;
+  }
+
+  .primario:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: linear-gradient(180deg, var(--acento), #a8005a);
+    box-shadow: 0 0 0 3px rgba(255, 90, 168, 0.18);
+  }
+}
+
+@media (min-width: 640px) {
+  body {
+    padding: calc(24px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right)) calc(32px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+  }
+
+  .app-header,
+  main,
+  footer {
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  main {
+    gap: 20px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: calc(32px + env(safe-area-inset-top)) calc(40px + env(safe-area-inset-right)) calc(40px + env(safe-area-inset-bottom)) calc(40px + env(safe-area-inset-left));
+  }
+
+  main,
+  footer {
+    max-width: 1080px;
+  }
+
+  .app-header {
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  main {
+    grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .card-ubicacion {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .card-instalar {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: calc(24px + env(safe-area-inset-top));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:active {
+    transform: none;
+  }
 }

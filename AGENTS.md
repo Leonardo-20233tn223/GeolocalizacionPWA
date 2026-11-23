@@ -45,7 +45,7 @@
 
 ## Service worker y despliegue
 
-- `CACHE_NAME = "geo-static-v1"` con prefijo `geo-static-`; sube `CACHE_NAME` al cambiar assets o la lógica del SW.
+- `CACHE_NAME` actual: `"geo-static-v2"` (prefijo `geo-static-`); sube `CACHE_NAME` al cambiar assets o la lógica del SW.
 - Pages publica desde `main` (carpeta `/`); al cambiar assets o `CACHE_NAME` y desplegar, el build tarda alrededor de un minuto.
 - Patrón de los ejemplos: cache-first para estáticos, network-first para navegación/APIs.
 - `manifest.json` (no `.webmanifest`) con `start_url`/`scope`/`id` en `./`; `sw.js` junto a `index.html` (GitHub Pages no permite `Service-Worker-Allowed`).
@@ -55,3 +55,4 @@
 
 - Tema oscuro con rosa mexicano `#e4007c` (acento) y `#ff5aa8` (claro); variables en `:root` de `styles.css`. No introduzcas otra paleta.
 - Mantén botones y textos con contraste AA; los badges de precisión usan rosa claro (alta) y ámbar (aproximada).
+- Diseño mobile-first: estilos base para móvil y mejoras en `640px` y `1024px`. En escritorio, Ubicación va a la izquierda e Instalar queda sticky a la derecha.
