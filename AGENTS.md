@@ -3,7 +3,8 @@
 ## Estado del repo
 
 - PWA de geolocalización implementada en la raíz: `index.html`, `app.js`, `geo-helper.js`, `sw.js`, `styles.css`, `manifest.json` e `icons/`.
-- Sin `package.json`, build, tests, lint ni CI: JS vanilla servido tal cual. Repo `main` sin commits ni remoto; no hacer commit ni push salvo que se pida.
+- Sin `package.json`, build, tests, lint ni CI: JS vanilla servido tal cual.
+- Repo `main` con remoto `https://github.com/Leonardo-20233tn223/GeolocalizacionPWA` y GitHub Pages activo en `https://leonardo-20233tn223.github.io/GeolocalizacionPWA/`. No hacer commit ni push salvo que se pida.
 - Guía de la práctica (fuente del contrato): https://josenarvaez.notion.site/Tema-6-3-Geolocalizaci-n-Consciente-y-Reutilizable-geo-helper-js-42161020854e8097962bcc83e06a11cc
 - Los ejemplos de referencia viven FUERA de este repo: `../pwa-practica-5.1` (instalabilidad + cámara + pre-permiso), `../app` (caché FakeStore), `../pwa-practica-4.2` (PokéAPI + TTL). No modificarlos ni copiar sus rutas absolutas (rompen en GitHub Pages de proyecto).
 
@@ -45,6 +46,7 @@
 ## Service worker y despliegue
 
 - `CACHE_NAME = "geo-static-v1"` con prefijo `geo-static-`; sube `CACHE_NAME` al cambiar assets o la lógica del SW.
+- Pages publica desde `main` (carpeta `/`); al cambiar assets o `CACHE_NAME` y desplegar, el build tarda alrededor de un minuto.
 - Patrón de los ejemplos: cache-first para estáticos, network-first para navegación/APIs.
 - `manifest.json` (no `.webmanifest`) con `start_url`/`scope`/`id` en `./`; `sw.js` junto a `index.html` (GitHub Pages no permite `Service-Worker-Allowed`).
 - Iconos en `icons/` generados con PowerShell/System.Drawing (fondo oscuro + pin rosa mexicano); no hay script de build en el repo.
