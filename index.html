@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Geolocalización PWA</title>
+  <meta name="description" content="Adjunta tu ubicación con consentimiento previo, diagnóstico de precisión y selector manual de zona.">
+  <meta name="theme-color" content="#e4007c">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Geo PWA">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon-180.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Geolocalización PWA</h1>
+    <p class="subtitle">Adjunta tus coordenadas con consentimiento y un plan B siempre disponible.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="titulo-instalar">
+      <h2 id="titulo-instalar">Instala la app</h2>
+      <p id="texto-instalacion">Puedes añadir esta aplicación a la pantalla de inicio para usarla como una app nativa.</p>
+      <button id="btn-instalar" class="btn primario oculto" type="button">Instalar aplicación</button>
+      <div id="instrucciones-ios" class="nota oculto">
+        <p><strong>En iPhone o iPad:</strong></p>
+        <ol>
+          <li>Abre esta página en Safari.</li>
+          <li>Toca el botón <strong>Compartir</strong>.</li>
+          <li>Elige <strong>Agregar a inicio</strong>.</li>
+        </ol>
+      </div>
+      <p id="estado-instalacion" class="estado" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card" aria-labelledby="titulo-ubicacion">
+      <h2 id="titulo-ubicacion">Ubicación</h2>
+      <p>Usamos tu ubicación solo para adjuntar las coordenadas a este registro. Nada se envía a un servidor.</p>
+
+      <div id="acciones-ubicacion" class="acciones">
+        <button id="btn-adjuntar" class="btn primario" type="button">Adjuntar mi ubicación</button>
+      </div>
+
+      <div id="pre-permiso" class="panel oculto">
+        <h3>Antes de continuar</h3>
+        <p>El navegador te pedirá permiso para acceder a tu ubicación. Esto es lo que debes saber:</p>
+        <ul class="lista">
+          <li>La lectura se hace una sola vez; no seguimos tus movimientos.</li>
+          <li>La precisión depende del hardware: GPS en móviles, Wi-Fi o IP en laptops.</li>
+          <li>Si deniegas el permiso, puedes elegir tu zona manualmente.</li>
+        </ul>
+        <button id="btn-confirmar-ubicacion" class="btn primario" type="button">Compartir mi ubicación</button>
+      </div>
+
+      <p id="estado-ubicacion" class="estado" role="status" aria-live="polite"></p>
+
+      <div id="resultado-ubicacion" class="panel oculto">
+        <h3>Ubicación obtenida</h3>
+        <span id="precision-ubicacion" class="precision"></span>
+        <dl class="datos-ubicacion">
+          <div class="dato">
+            <dt>Latitud</dt>
+            <dd id="valor-latitud">—</dd>
+          </div>
+          <div class="dato">
+            <dt>Longitud</dt>
+            <dd id="valor-longitud">—</dd>
+          </div>
+          <div class="dato">
+            <dt>Precisión</dt>
+            <dd id="valor-precision">—</dd>
+          </div>
+          <div class="dato">
+            <dt>Hora de lectura</dt>
+            <dd id="valor-hora">—</dd>
+          </div>
+        </dl>
+        <p class="nota">La precisión es un radio de confianza en metros: menos de 30 m indica GPS de alta precisión; más, una ubicación aproximada por Wi-Fi o IP.</p>
+      </div>
+
+      <div id="plan-b" class="panel oculto">
+        <h3>Selecciona tu zona</h3>
+        <p id="aviso-plan-b">Puedes continuar seleccionando una zona de ejemplo. La app no se bloquea.</p>
+        <div class="campo">
+          <label for="selector-zona">Zona</label>
+          <select id="selector-zona"></select>
+        </div>
+        <button id="btn-usar-zona" class="btn primario" type="button">Usar esta zona</button>
+        <p class="nota">Las coordenadas de las zonas son de ejemplo y se marcan como selección manual.</p>
+      </div>
+
+      <p id="estado-zona" class="estado" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aplicaciones Web Progresivas — Práctica de geolocalización</p>
+  </footer>
+
+  <script src="./geo-helper.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
